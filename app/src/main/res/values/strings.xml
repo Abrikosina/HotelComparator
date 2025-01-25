@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">HotelComparator</string>
+    <string name="main_screen">Поиск</string>
+    <string name="favourites_screen">Избранное</string>
+    <string name="settings_screen">Настройки</string>
+    <string name="placeholder">Настройки</string>
+    <string name="destination">Направление</string>
+    <string name="date">Дата</string>
+    <string name="guests">Гости</string>
+    <string name="search">Поиск</string>
+    <string name="write_review">Написать отзыв</string>
+    <string name="reviews_count">%s отзыва</string>
+    <string name="information">Информация</string>
+</resources>
