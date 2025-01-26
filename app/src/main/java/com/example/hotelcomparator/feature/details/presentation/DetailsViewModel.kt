@@ -43,6 +43,10 @@ constructor(
 		observeHotelPrices()
 	}
 
+	fun onStart(name: String) {
+		Log.i("myTag","NAME "+name)
+	}
+
 	private fun getDetails() {
 		viewModelScope.launch(ioDispatcher) {
 			val details = detailsInteractor.getDetails("17826397")

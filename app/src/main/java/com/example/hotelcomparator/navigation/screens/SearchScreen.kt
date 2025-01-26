@@ -7,7 +7,7 @@ import com.example.hotelcomparator.feature.search.SearchScreenView
 
 const val SEARCH_SCREEN_ROUTE = "search"
 
-fun NavGraphBuilder.searchScreen(onClick: (() -> Unit)? = null) {
+fun NavGraphBuilder.searchScreen(onClick: ((name: String) -> Unit)? = null) {
 	composable(SEARCH_SCREEN_ROUTE) {
 		SearchScreenView(onClick)
 	}

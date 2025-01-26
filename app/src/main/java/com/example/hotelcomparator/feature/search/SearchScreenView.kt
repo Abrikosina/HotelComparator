@@ -60,7 +60,7 @@ import com.example.hotelcomparator.feature.search.SearchBarDefaults.getTrailingI
 import com.example.hotelcomparator.feature.search.domain.model.SearchData
 
 @Composable
-fun SearchScreenView(onSearchClick: (() -> Unit)?, viewModel: SearchViewModel = hiltViewModel()) {
+fun SearchScreenView(onSearchClick: ((name: String) -> Unit)?, viewModel: SearchViewModel = hiltViewModel()) {
 	val lifecycleOwner = LocalLifecycleOwner.current
 	val state by viewModel.screenState.collectAsStateWithLifecycle(lifecycleOwner = lifecycleOwner)
 	Column {
@@ -88,7 +88,7 @@ fun SearchScreenView(onSearchClick: (() -> Unit)?, viewModel: SearchViewModel = 
 @Composable
 fun SearchItems(
 	searchDataItems: List<SearchData>,
-	onSearchClick: (() -> Unit)?,
+	onSearchClick: ((name: String) -> Unit)?,
 	modifier: Modifier = Modifier
 ) {
 	Log.i("myTag", "SearchItems")
@@ -100,11 +100,11 @@ fun SearchItems(
 }
 
 @Composable
-fun SearchItem(item: SearchData, onSearchClick: (() -> Unit)?, modifier: Modifier = Modifier) {
+fun SearchItem(item: SearchData, onSearchClick: ((name: String) -> Unit)?, modifier: Modifier = Modifier) {
 	Log.i("myTag", "SearchItem")
 	Row(
 		modifier = Modifier
-			.clickable(onClick = onSearchClick ?: {})
+			.clickable(onClick = { onSearchClick?.invoke(item.name) })
 			.fillMaxWidth()
 			.padding(vertical = 8.dp)
 	) {

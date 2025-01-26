@@ -27,7 +27,7 @@ fun AppNavGraph(
         mainScreen(onSearchClick = { navController.navigateToSearchScreen() })
         favouritesScreen()
         settingsScreen()
-        searchScreen(onClick = { navController.navigateToDetailsScreen() })
+        searchScreen(onClick = { name -> navController.navigateToDetailsScreen(name) })
         detailsScreen()
     }
 }

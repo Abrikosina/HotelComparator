@@ -83,10 +83,13 @@ import com.kevinnzou.web.rememberWebViewState
 
 
 @Composable
-fun DetailsScreenView(viewModel: DetailsViewModel = hiltViewModel()) {
+fun DetailsScreenView(name: String, viewModel: DetailsViewModel = hiltViewModel()) {
 	val lifecycleOwner = LocalLifecycleOwner.current
 	val state by viewModel.screenState.collectAsStateWithLifecycle(lifecycleOwner = lifecycleOwner)
 	DetailsContent(state, viewModel)
+	LaunchedEffect(true) {
+		viewModel.onStart(name = name)
+	}
 }
 
 @OptIn(ExperimentalFoundationApi::class)

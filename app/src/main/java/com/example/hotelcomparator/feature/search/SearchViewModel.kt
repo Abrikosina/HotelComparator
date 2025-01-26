@@ -74,13 +74,6 @@ constructor(
 					val result = startSearch(searchQuery)
 					result.onSuccess { successResult ->
 							Log.i("myTag","lllll")
-//							val newResult = successResult.data.map { searchData ->
-//								val photoResult = async { photoUseCase.invoke(searchData.locationId) }.await()
-//								 photoResult.onSuccess {
-//									 searchData.images = it.data.firstOrNull()?.images.orEmpty()
-//								 }
-//								searchData
-//							}
 						val pep = mutableMapOf<String, Deferred<NetworkResult<Photo>>>()
 						successResult.data.forEach { searchData ->
 							val kek: Deferred<NetworkResult<Photo>> = async { photoUseCase.invoke(searchData.locationId) }

@@ -18,6 +18,7 @@ fun List<SearchDataResponse>.toSearchData(): List<SearchData> {
 }
 
 fun SearchDataResponse.toSearchData(): SearchData {
+	Log.i("myTag","Response "+this)
 	return SearchData(
 		locationId = locationId,
 		name = name,
@@ -33,7 +34,7 @@ fun AddressResponse.toAddressData(): AddressData {
 		secondStreet = secondStreet.orEmpty(),
 		city = city,
 		state = state.orEmpty(),
-		country = country,
+		country = country.orEmpty(),
 		postalCode = postalCode.orEmpty(),
 		address = address
 	)
